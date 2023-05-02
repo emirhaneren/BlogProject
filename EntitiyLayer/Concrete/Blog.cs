@@ -11,20 +11,21 @@ namespace EntitiyLayer.Concrete
     {
         [Key]
         public int BlogID { get; set; }
-        public string BlogTitle { get; set; }
-        public string BlogContent { get; set; }
-        public string BlogThumbnailImage { get; set; }
-        public string BlogImage { get; set; }
+        public string? BlogTitle { get; set; }
+        public string? BlogContent { get; set; }
+        public string? BlogThumbnailImage { get; set; }
+        public string? BlogImage { get; set; }
         public DateTime BlogCreateDate { get; set; }
+        public bool BlogStatus { get; set; }
         
         //Relation settings (N-1)
         //Other table Key
         //add-migration mig2
         public int CategoryID { get; set; }
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
         //Relation settings (1-N)
         //ICollection
-        public List<Comment> Comments { get; set; }
+        public List<Comment>? Comments { get; set; }
 
 
     }

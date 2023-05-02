@@ -22,5 +22,6 @@ namespace DataAccessLayer.Abstract
         //Other GetMethod
         Blog GetById(int id);
         */
+        List<Blog> GetListWithCategory();
     }
 }
