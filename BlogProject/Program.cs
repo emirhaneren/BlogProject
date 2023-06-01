@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,9 +8,15 @@ builder.Services.AddControllersWithViews(option =>
 {
     option.Filters.Add(new AuthorizeFilter());
 });
+builder.Services.AddMvc();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(x =>
+    {
+        x.LoginPath = "/Login/Index/";
+    });
 
 builder.Services.AddSession();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
