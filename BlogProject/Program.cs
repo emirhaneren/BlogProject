@@ -1,7 +1,14 @@
+using Microsoft.AspNetCore.Mvc.Authorization;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(option =>
+{
+    option.Filters.Add(new AuthorizeFilter());
+});
+
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -18,6 +25,9 @@ app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1", "?code={0}");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseSession();
+
+app.UseAuthentication();
 app.UseRouting();
 
 app.UseAuthorization();
