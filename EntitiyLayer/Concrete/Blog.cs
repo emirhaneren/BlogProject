@@ -23,9 +23,12 @@ namespace EntitiyLayer.Concrete
         //add-migration mig2
         public int CategoryID { get; set; }
         public Category? Category { get; set; }
-        //Relation settings (1-N)
-        //ICollection
-        public List<Comment>? Comments { get; set; }
+        //add-migration mig3
+		public int WriterID { get; set; }
+		public Writer? Writer { get; set; }
+		//Relation settings (1-N)
+		//ICollection
+		public List<Comment>? Comments { get; set; }
 
 
     }
