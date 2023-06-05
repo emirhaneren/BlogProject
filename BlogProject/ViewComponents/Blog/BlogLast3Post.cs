@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BlogProject.Views.Shared.Components.BlogLast3Post
 {
-    public class Default : ViewComponent
+    public class BlogLast3Post : ViewComponent
     {
         BlogManager bm = new BlogManager(new EfBlogRepository());
         public IViewComponentResult Invoke()
