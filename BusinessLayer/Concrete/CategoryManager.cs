@@ -45,7 +45,7 @@ namespace BusinessLayer.Concrete
         //    }
         //    else
         //    {
-        //        //Error message, Fluent validation
+        //        Error message, Fluent validation
         //    }
         //    */
 
@@ -54,7 +54,7 @@ namespace BusinessLayer.Concrete
         //     * */
 
         //    _categoryDal.Insert(category);
-            
+
         //}
 
         public void AddT(Category t)
@@ -76,7 +76,7 @@ namespace BusinessLayer.Concrete
         //    efCategoryRepository.Delete(category);
         //    */
 
-        //    _categoryDal.Delete(category);  
+        //    _categoryDal.Delete(category);
         //}
 
         public void DeleteT(Category t)
@@ -94,18 +94,13 @@ namespace BusinessLayer.Concrete
             return _categoryDal.GetById(id);
         }
 
-        //public List<Category> GetList()
-        //{
-        //    //Rules
-        //    /*
-        //     * return efCategoryRepository.GetListAll();
-        //     */
-
-        //    return _categoryDal.GetListAll();
-        //}
-
         public List<Category> GetList()
         {
+            //Rules
+            /*
+             * return efCategoryRepository.GetListAll();
+             */
+
             return _categoryDal.GetListAll();
         }
 
