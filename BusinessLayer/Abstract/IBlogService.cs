@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 //11. Step Business Layer
 namespace BusinessLayer.Abstract
 {
-	public interface IBlogService
+	public interface IBlogService /*: IGenericService<Blog>*/
 	{
 		void AddBlog(Blog blog);
 		void DeleteBlog(Blog blog);

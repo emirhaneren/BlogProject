@@ -35,43 +35,53 @@ namespace BusinessLayer.Concrete
             _categoryDal = categoryDal;
         }
 
-        public void AddCategory(Category category)
-        {
-            //Rules
-            /*
-            if(category.CategoryName!="" && category.CategoryDescription!="" && category.CategoryName.Length>=5 && category.CategoryStatus==true)
-            {
-                categoryRepository.AddCategory(category);
-            }
-            else
-            {
-                //Error message, Fluent validation
-            }
-            */
+        //public void AddCategory(Category category)
+        //{
+        //    //Rules
+        //    /*
+        //    if(category.CategoryName!="" && category.CategoryDescription!="" && category.CategoryName.Length>=5 && category.CategoryStatus==true)
+        //    {
+        //        categoryRepository.AddCategory(category);
+        //    }
+        //    else
+        //    {
+        //        //Error message, Fluent validation
+        //    }
+        //    */
 
-            /*
-             * efCategoryRepository.Insert(category);
-             * */
+        //    /*
+        //     * efCategoryRepository.Insert(category);
+        //     * */
 
-            _categoryDal.Insert(category);
+        //    _categoryDal.Insert(category);
             
+        //}
+
+        public void AddT(Category t)
+        {
+            _categoryDal.Insert(t);
         }
 
-        public void DeleteCategory(Category category)
+        //public void DeleteCategory(Category category)
+        //{
+        //    //Rules
+        //    /*
+        //    if(category.CategoryID!= 0)
+        //    {
+        //        repo.Delete(category);
+        //    }
+        //    */
+
+        //    /*
+        //    efCategoryRepository.Delete(category);
+        //    */
+
+        //    _categoryDal.Delete(category);  
+        //}
+
+        public void DeleteT(Category t)
         {
-            //Rules
-            /*
-            if(category.CategoryID!= 0)
-            {
-                repo.Delete(category);
-            }
-            */
-
-            /*
-            efCategoryRepository.Delete(category);
-            */
-
-            _categoryDal.Delete(category);  
+            _categoryDal.Delete(t);
         }
 
         public Category GetById(int id)
@@ -84,24 +94,34 @@ namespace BusinessLayer.Concrete
             return _categoryDal.GetById(id);
         }
 
+        //public List<Category> GetList()
+        //{
+        //    //Rules
+        //    /*
+        //     * return efCategoryRepository.GetListAll();
+        //     */
+
+        //    return _categoryDal.GetListAll();
+        //}
+
         public List<Category> GetList()
         {
-            //Rules
-            /*
-             * return efCategoryRepository.GetListAll();
-             */
-
             return _categoryDal.GetListAll();
         }
 
-        public void UpdateCategory(Category category)
-        {
-            //Rules
-            /*
-             * efCategoryRepository.Update(category);
-             */
+        //public void UpdateCategory(Category category)
+        //{
+        //    //Rules
+        //    /*
+        //     * efCategoryRepository.Update(category);
+        //     */
 
-            _categoryDal.Update(category);
+        //    _categoryDal.Update(category);
+        //}
+
+        public void UpdateT(Category t)
+        {
+            _categoryDal.Update(t);
         }
     }
 }
