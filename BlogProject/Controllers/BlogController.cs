@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BusinessLayer.ValidationRules;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 
 namespace BlogProject.Controllers
 {
@@ -27,13 +29,21 @@ namespace BlogProject.Controllers
         [Authorize]
         public IActionResult BlogListByWriter()
         {
-            var values =bm.GetBlogListByWriter(1);
+            var values =bm.GetListWithCategoryByWriter(1);
             return View(values);
         }
         [Authorize]
         [HttpGet]
         public IActionResult AddBlog()
         {
+            CategoryManager cm = new CategoryManager(new EfCategoryRepository());
+            List<SelectListItem> categoryValues = (from x in cm.GetList()
+                                                    select new SelectListItem
+                                                    {
+                                                        Text = x.CategoryName,
+                                                        Value=x.CategoryID.ToString()
+                                                    }).ToList();
+            ViewBag.cv = categoryValues;
             return View();
         }
         [HttpPost]
@@ -59,6 +69,5 @@ namespace BlogProject.Controllers
             }
             return View();
         }
-        
     }
 }
