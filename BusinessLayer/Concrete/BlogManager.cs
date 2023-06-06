@@ -23,7 +23,7 @@ namespace BusinessLayer.Concrete
         }
         public Blog GetById(int id)
         {
-            throw new NotImplementedException();
+            return _blogDal.GetById(id);
         }
         public List<Blog> GetBlogByID(int id)
         {
@@ -53,12 +53,12 @@ namespace BusinessLayer.Concrete
 
         public void DeleteT(Blog t)
         {
-            throw new NotImplementedException();
+            _blogDal.Delete(t);
         }
 
         public void UpdateT(Blog t)
         {
-            throw new NotImplementedException();
+            _blogDal.Update(t);
         }
     }
 }
