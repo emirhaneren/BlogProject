@@ -113,7 +113,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("BlogRatingID");
 
-                    b.ToTable("BlogRatings");
+                    b.ToTable("BlogScores");
                 });
 
             modelBuilder.Entity("EntitiyLayer.Concrete.Category", b =>
