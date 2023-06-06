@@ -10,7 +10,8 @@ namespace BlogProject.ViewComponents.Blog
 		public IViewComponentResult Invoke()
 		{
 			var values = bm.GetBlogListByWriter(1);
-			return View(values);
+			var last10values = values.TakeLast(10).ToList();
+			return View(last10values);
 		}
 	}
 }
