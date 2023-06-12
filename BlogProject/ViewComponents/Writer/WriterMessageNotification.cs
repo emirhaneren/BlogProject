@@ -4,12 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BlogProject.ViewComponents.Writer
 {
-    public class WriterNotification:ViewComponent
+    public class WriterMessageNotification : ViewComponent
     {
-        NotificationManager nm = new NotificationManager(new EfNotificationRepository());
+        Message2Manager mm = new Message2Manager(new EfMessage2Repository());
         public IViewComponentResult Invoke()
         {
-            var values = nm.GetList();
+            int id = 1;
+            var values = mm.GetInboxListByWriter(id);
             return View(values);
         }
     }
