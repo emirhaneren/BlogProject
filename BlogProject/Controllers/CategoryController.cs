@@ -8,7 +8,7 @@ namespace BlogProject.Controllers
     public class CategoryController : Controller
     {
         //add categorymanager
-        CategoryManager cm=new CategoryManager(new EfCategoryRepository());
+        CategoryManager cm = new CategoryManager(new EfCategoryRepository());
         public IActionResult Index()
         {
             //category list

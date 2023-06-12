@@ -22,7 +22,7 @@ namespace BlogProject.Controllers
         }
         [AllowAnonymous]
         public IActionResult Test()
-        { 
+        {
             return View();
         }
         [AllowAnonymous]
@@ -49,14 +49,14 @@ namespace BlogProject.Controllers
             WriterValidator w1 = new WriterValidator();
             ValidationResult results = w1.Validate(p);
             p.WriterStatus = true;
-            if(results.IsValid)
+            if (results.IsValid)
             {
                 wm.UpdateT(p);
                 return RedirectToAction("Index", "Dashboard");
             }
             else
             {
-                foreach(var item in results.Errors)
+                foreach (var item in results.Errors)
                 {
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
@@ -71,15 +71,15 @@ namespace BlogProject.Controllers
         }
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult WriterAdd (AddProfileImage p)
+        public IActionResult WriterAdd(AddProfileImage p)
         {
             Writer w = new Writer();
-            if(p.WriterImage!= null)
+            if (p.WriterImage != null)
             {
                 var extensions = Path.GetExtension(p.WriterImage.FileName);
                 var newimagename = Guid.NewGuid() + extensions;
-                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/WriterImageFiles/",newimagename);
-                var stream = new FileStream(location,FileMode.Create);
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/WriterImageFiles/", newimagename);
+                var stream = new FileStream(location, FileMode.Create);
                 p.WriterImage.CopyTo(stream);
                 w.WriterImage = newimagename;
             }

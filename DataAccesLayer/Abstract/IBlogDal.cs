@@ -1,14 +1,9 @@
 ﻿using EntitiyLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 //6. Step, Interfaces
 //Finally implement generic repository
 namespace DataAccessLayer.Abstract
 {
-    public interface IBlogDal:IGenericDal<Blog>
+    public interface IBlogDal : IGenericDal<Blog>
     {
         /*
         //ListMethod

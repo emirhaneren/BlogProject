@@ -1,22 +1,17 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntitiyLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-	public class AboutManager : IAboutService
-	{
-		IAboutDal _aboutDal;
+    public class AboutManager : IAboutService
+    {
+        IAboutDal _aboutDal;
 
-		public AboutManager(IAboutDal aboutDal)
-		{
-			_aboutDal = aboutDal;
-		}
+        public AboutManager(IAboutDal aboutDal)
+        {
+            _aboutDal = aboutDal;
+        }
 
         public void AddT(About t)
         {
@@ -34,9 +29,9 @@ namespace BusinessLayer.Concrete
         }
 
         public List<About> GetList()
-		{
-			return _aboutDal.GetListAll();
-		}
+        {
+            return _aboutDal.GetListAll();
+        }
 
         public void UpdateT(About t)
         {

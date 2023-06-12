@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 //1. Step
 namespace EntitiyLayer.Concrete
 {
@@ -17,8 +12,8 @@ namespace EntitiyLayer.Concrete
         public string? WriterMail { get; set; }
         public string? WriterPassword { get; set; }
         public bool WriterStatus { get; set; }
-		public List<Blog>? Blogs { get; set; }
+        public List<Blog>? Blogs { get; set; }
         public virtual ICollection<Message2>? WriterSender { get; set; }
         public virtual ICollection<Message2>? WriterReceiver { get; set; }
-	}
+    }
 }

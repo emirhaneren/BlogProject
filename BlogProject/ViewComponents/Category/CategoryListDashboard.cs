@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BlogProject.ViewComponents.Category
 {
-    public class CategoryListDashboard:ViewComponent
+    public class CategoryListDashboard : ViewComponent
     {
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
         public IViewComponentResult Invoke()

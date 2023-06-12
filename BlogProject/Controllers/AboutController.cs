@@ -8,11 +8,11 @@ namespace BlogProject.Controllers
     [AllowAnonymous]
     public class AboutController : Controller
     {
-        AboutManager abm=new AboutManager(new EfAboutRepository());
+        AboutManager abm = new AboutManager(new EfAboutRepository());
         public IActionResult Index()
-		{
-			var values = abm.GetList();
-			return View(values);
+        {
+            var values = abm.GetList();
+            return View(values);
         }
         public PartialViewResult SocialMediaAbout()
         {

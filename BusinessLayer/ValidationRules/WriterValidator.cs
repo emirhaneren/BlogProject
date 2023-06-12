@@ -1,15 +1,10 @@
 ﻿using EntitiyLayer.Concrete;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 //Fluent Validation Class
 //13.Step
 namespace BusinessLayer.ValidationRules
 {
-    public class WriterValidator: AbstractValidator<Writer>
+    public class WriterValidator : AbstractValidator<Writer>
     {
         public WriterValidator()
         {

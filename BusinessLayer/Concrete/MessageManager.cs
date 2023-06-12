@@ -1,11 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntitiyLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -40,7 +35,7 @@ namespace BusinessLayer.Concrete
 
         public List<Message> GetInboxListByWriter(string p)
         {
-            return _messageDal.GetListAll(x => x.Receiver==p);
+            return _messageDal.GetListAll(x => x.Receiver == p);
         }
 
         public void UpdateT(Message t)

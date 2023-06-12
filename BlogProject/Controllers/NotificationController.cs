@@ -7,7 +7,7 @@ namespace BlogProject.Controllers
 {
     public class NotificationController : Controller
     {
-        NotificationManager nm =new NotificationManager(new EfNotificationRepository());
+        NotificationManager nm = new NotificationManager(new EfNotificationRepository());
         public IActionResult Index()
         {
             return View();

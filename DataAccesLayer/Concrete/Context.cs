@@ -1,12 +1,5 @@
 ﻿using EntitiyLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 //2. Step, (Only Entity Layer)
 //ConnectionString Class
 //3.Step, Add Referance Entity Layer

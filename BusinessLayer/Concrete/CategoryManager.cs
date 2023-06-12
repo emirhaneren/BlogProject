@@ -1,13 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
-using DataAccessLayer.EntityFramework;
-using DataAccessLayer.Repositories;
 using EntitiyLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 //12.Step Manager class
 //Rules and Validation
 namespace BusinessLayer.Concrete
@@ -22,7 +15,7 @@ namespace BusinessLayer.Concrete
         // EfCategoryRepository efCategoryRepository;
 
         ICategoryDal _categoryDal;
-       
+
         //Create constructor
         /* public CategoryManager()
         {

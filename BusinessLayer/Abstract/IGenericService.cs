@@ -1,10 +1,4 @@
-﻿using EntitiyLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-//11.step, services
+﻿//11.step, services
 namespace BusinessLayer.Abstract
 {
     public interface IGenericService<T>

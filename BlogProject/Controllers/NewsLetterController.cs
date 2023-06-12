@@ -9,7 +9,7 @@ namespace BlogProject.Controllers
     [AllowAnonymous]
     public class NewsLetterController : Controller
     {
-        NewsLetterManager nm= new NewsLetterManager(new EfNewsLetterRepository());
+        NewsLetterManager nm = new NewsLetterManager(new EfNewsLetterRepository());
         [HttpGet]
         public PartialViewResult SubscribeMail()
         {
