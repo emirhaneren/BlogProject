@@ -16,6 +16,31 @@ namespace BlogProject.Areas.Admin.Controllers
             var jsonWriters = JsonConvert.SerializeObject(Writers);
             return Json(jsonWriters);
         }
+        public ActionResult GetWriterByID(int writerid)
+        {
+            var findWriter = Writers.FirstOrDefault(x => x.Id == writerid);
+            var jsonWriters = JsonConvert.SerializeObject(findWriter);
+            return Json(jsonWriters);
+        }
+        public ActionResult AddWriter (WriterClass w)
+        {
+            Writers.Add(w);
+            var jsonWriters = JsonConvert.SerializeObject(w);
+            return Json(jsonWriters);
+        }
+        public ActionResult DeleteWriter(int id)
+        {
+            var writer = Writers.FirstOrDefault(x=>x.Id == id);
+            Writers.Remove(writer);
+            return Json(writer);
+        }
+        public ActionResult UpdateWriter(WriterClass w)
+        {
+            var writer=Writers.FirstOrDefault(x=>x.Id == w.Id);
+            writer.Name = w.Name;
+            var jsonWriter=JsonConvert.SerializeObject(writer);
+            return Json(jsonWriter);
+        }
         public static List<WriterClass> Writers = new List<WriterClass>()
         {
             new WriterClass()
