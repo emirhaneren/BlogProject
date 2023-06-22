@@ -17,11 +17,11 @@
         <tr>
             <td>@item.ID</td>
             <td>@item.Name</td>
-            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-outline-success">Düzenle</a></td>
+            <td><a href="/ApiTest/DeleteEmployee/@item.ID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/ApiTest/EditEmployee/@item.ID" class="btn btn-outline-success">Düzenle</a></td>
         </tr>
     }
 </table>
 <br />
-<a href="#" class="btn btn-outline-primary">Yeni Öğe Ekle</a>
+<a href="/ApiTest/AddEmployee/">Yeni Çalışan Ekle</a>
 
